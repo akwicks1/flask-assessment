@@ -1,0 +1,13 @@
+form input {
+    background-color: #ffff94;
+    margin-bottom: 10px;
+}
+
+#lastname {
+    font-weight: bold;
+}
+
+#instructions {
+    border: 2px black solid;
+    padding: 10px;
+}

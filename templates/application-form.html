@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	
+    <title>Application Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--     <link href="static/styles.css" rel="stylesheet"> -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+	<body>
+		<div class="container">
+			<h1>Thank you for your interest in Ubermelon</h1>
+				<p id="instructions"> Think you have what it takes to work at Ubermelon? Fill out the application below!  Be sure to include your first and last name, the position you're applying for and your salary requirement.<p>
+					<form action="/application-success" method="POST">
+						<div class="form-group">
+							<label for="firstname">First name</label>
+							<input type="text" name="firstname" class="form-control">
+							<br>
+							<label for="lastname">Last name</label>
+							<input type="text" name="lastname" class="form-control" id="lastname">
+							<br>
+							<label for="salary">Salary Requirement</label>
+							<input type="number" name="salary" step="0.01" class="form-control">
+							<br>
+							<label for="position">Position</label>
+							<select name="jobtitle" class="form-control">
+								<option selected="selected">Application for:</option>
+								{% for job in jobs %}
+									<option value="{{ job }}">{{ job }}</option>
+								{% endfor %}
+							</select>
+							<input type="submit" value="submit">
+					</form>
+				</div>
+		</body>
+	
+</html>
